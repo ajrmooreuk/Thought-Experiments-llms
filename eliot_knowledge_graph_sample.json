@@ -1,0 +1,895 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "literary": "https://literary-ontology.org/",
+    "influence": "https://influence-ontology.org/"
+  },
+  "@graph": [
+    {
+      "@id": "literary:TSEliot",
+      "@type": "literary:LiteraryFigure",
+      "name": "Thomas Stearns Eliot",
+      "alternateName": ["T.S. Eliot", "Old Possum"],
+      "birthDate": "1888-09-26",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "St. Louis, Missouri, USA",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "38.6270",
+          "longitude": "-90.1994"
+        }
+      },
+      "deathDate": "1965-01-04",
+      "deathPlace": {
+        "@type": "Place",
+        "name": "London, England",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.5074",
+          "longitude": "-0.1278"
+        }
+      },
+      "nationality": ["American", "British"],
+      "award": [
+        {
+          "@type": "Award",
+          "name": "Nobel Prize in Literature",
+          "dateAwarded": "1948"
+        },
+        {
+          "@type": "Award",
+          "name": "Order of Merit",
+          "dateAwarded": "1948"
+        }
+      ],
+      "literary:professionalRoles": [
+        "Poet",
+        "Critic",
+        "Editor",
+        "Publisher",
+        "Playwright"
+      ]
+    },
+    {
+      "@id": "literary:DanteAlighieri",
+      "@type": "literary:LiteraryFigure",
+      "name": "Dante Alighieri",
+      "birthDate": "1265",
+      "deathDate": "1321",
+      "nationality": "Italian",
+      "literary:majorWorks": [
+        {"@id": "literary:DivineComedy"}
+      ]
+    },
+    {
+      "@id": "literary:DanteInfluencesEliot",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:DanteAlighieri"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Thematic", "Structural", "Philosophical", "Technical/Formal"],
+      "literary:influenceStrength": "Foundational",
+      "literary:manifestation": [
+        "Spiritual journey narrative structure",
+        "Purgatorial imagery in Ash-Wednesday",
+        "Three-part division echoed in Four Quartets",
+        "Direct quotations and allusions in The Waste Land",
+        "Concept of redemption through suffering",
+        "Mystical vision as poetic goal"
+      ],
+      "literary:evidenceSources": [
+        "Eliot's essay 'Dante' (1929)",
+        "The Waste Land line 63: 'I had not thought death had undone so many' (Inferno III)",
+        "Four Quartets dedication to Dante's terza rima influence",
+        "Numerous letters and critical statements"
+      ],
+      "literary:temporalContext": "Throughout career, intensifying after 1927 conversion"
+    },
+    {
+      "@id": "literary:CharlesBaudelaire",
+      "@type": "literary:LiteraryFigure",
+      "name": "Charles Baudelaire",
+      "birthDate": "1821-04-09",
+      "deathDate": "1867-08-31",
+      "nationality": "French",
+      "literary:associatedMovement": [
+        {"@id": "literary:Symbolism"},
+        {"@id": "literary:Decadence"}
+      ]
+    },
+    {
+      "@id": "literary:BaudelaireInfluencesEliot",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:CharlesBaudelaire"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Thematic", "Stylistic"],
+      "literary:influenceStrength": "Major",
+      "literary:manifestation": [
+        "Urban alienation and decay imagery",
+        "Spleen and ennui as subject matter",
+        "Flâneur figure in urban landscape",
+        "Beauty found in sordid modern life"
+      ],
+      "literary:evidenceSources": [
+        "The Waste Land dedication reference to 'hypocrite lecteur' (Baudelaire)",
+        "Eliot's essay on Baudelaire",
+        "Urban imagery throughout early poetry"
+      ]
+    },
+    {
+      "@id": "literary:JulesLaforgue",
+      "@type": "literary:LiteraryFigure",
+      "name": "Jules Laforgue",
+      "birthDate": "1860-08-16",
+      "deathDate": "1887-08-20",
+      "nationality": "French",
+      "literary:associatedMovement": [
+        {"@id": "literary:Symbolism"}
+      ]
+    },
+    {
+      "@id": "literary:LaforgueInfluencesEliot",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:JulesLaforgue"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Stylistic", "Technical/Formal"],
+      "literary:influenceStrength": "Foundational",
+      "literary:manifestation": [
+        "Ironic self-awareness and distance",
+        "Colloquial speech within formal poetry",
+        "Interior monologue technique",
+        "Free verse experimentation",
+        "Anti-romantic stance"
+      ],
+      "literary:evidenceSources": [
+        "Eliot discovered Laforgue via Arthur Symons' The Symbolist Movement in Literature (1908)",
+        "Stylistic analysis of Prufrock shows Laforguian irony",
+        "Eliot's own statements about early influence"
+      ],
+      "literary:temporalContext": "1908-1915 (formative period)"
+    },
+    {
+      "@id": "literary:JohnDonne",
+      "@type": "literary:LiteraryFigure",
+      "name": "John Donne",
+      "birthDate": "1572",
+      "deathDate": "1631-03-31",
+      "nationality": "English",
+      "literary:associatedMovement": [
+        {"@id": "literary:MetaphysicalPoets"}
+      ]
+    },
+    {
+      "@id": "literary:DonneInfluencesEliot",
+      "@type": "InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:JohnDonne"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Stylistic", "Philosophical", "Technical/Formal"],
+      "literary:influenceStrength": "Major",
+      "literary:manifestation": [
+        "Metaphysical conceits and wit",
+        "Unified sensibility (thought and feeling together)",
+        "Dramatic qualities",
+        "Religious and erotic combined"
+      ],
+      "literary:evidenceSources": [
+        "Eliot's essay 'The Metaphysical Poets' (1921)",
+        "Concept of 'dissociation of sensibility' developed in relation to Donne",
+        "Technical echoes in early poetry"
+      ]
+    },
+    {
+      "@id": "literary:EzraPound",
+      "@type": "literary:LiteraryFigure",
+      "name": "Ezra Pound",
+      "birthDate": "1885-10-30",
+      "deathDate": "1972-11-01",
+      "nationality": "American",
+      "literary:associatedMovement": [
+        {"@id": "literary:Imagism"},
+        {"@id": "literary:Vorticism"},
+        {"@id": "literary:Modernism"}
+      ]
+    },
+    {
+      "@id": "literary:PoundInfluencesEliot",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:EzraPound"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Direct Personal", "Technical/Formal", "Mediated/Indirect"],
+      "literary:influenceStrength": "Foundational",
+      "literary:manifestation": [
+        "Editorial guidance on The Waste Land (cut 400+ lines)",
+        "Imagist precision and economy",
+        "Use of literary allusion and multiple languages",
+        "Publishing connections and career support",
+        "Modernist aesthetic principles"
+      ],
+      "literary:evidenceSources": [
+        "The Waste Land manuscript with Pound's edits (published 1971)",
+        "Dedication 'il miglior fabbro' (the better craftsman)",
+        "Extensive correspondence",
+        "Pound's role in publishing Prufrock"
+      ],
+      "literary:temporalContext": "1914-1922 (most intensive collaboration)"
+    },
+    {
+      "@id": "literary:IrvingBabbitt",
+      "@type": "literary:LiteraryFigure",
+      "name": "Irving Babbitt",
+      "birthDate": "1865-08-02",
+      "deathDate": "1933-07-15",
+      "nationality": "American",
+      "literary:professionalRoles": ["Professor", "Critic"],
+      "literary:intellectualConcerns": [
+        "New Humanism",
+        "Classical restraint",
+        "Anti-Romanticism"
+      ]
+    },
+    {
+      "@id": "literary:BabbittInfluencesEliot",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:IrvingBabbitt"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Direct Personal", "Philosophical"],
+      "literary:influenceStrength": "Major",
+      "literary:manifestation": [
+        "Classical humanism orientation",
+        "Critique of Romanticism",
+        "Emphasis on tradition and restraint",
+        "Moral dimension of literature"
+      ],
+      "literary:evidenceSources": [
+        "Eliot's studies under Babbitt at Harvard (1909-1910)",
+        "Eliot's essay on Babbitt",
+        "Intellectual trajectory alignment"
+      ],
+      "literary:temporalContext": "1909-1910 (Harvard graduate studies)"
+    },
+    {
+      "@id": "literary:FHBradley",
+      "@type": "Person",
+      "name": "F.H. Bradley",
+      "birthDate": "1846-01-30",
+      "deathDate": "1924-09-18",
+      "nationality": "British",
+      "jobTitle": "Philosopher",
+      "knowsAbout": [
+        "British Idealism",
+        "Metaphysics",
+        "Epistemology"
+      ]
+    },
+    {
+      "@id": "literary:BradleyInfluencesEliot",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:FHBradley"},
+      "literary:influenced": {"@id": "literary:TSEliot"},
+      "literary:influenceType": ["Philosophical"],
+      "literary:influenceStrength": "Major",
+      "literary:manifestation": [
+        "Philosophical grounding for poetic theory",
+        "Concept of private experience and public meaning",
+        "Epistemological skepticism",
+        "Relationship between subject and object"
+      ],
+      "literary:evidenceSources": [
+        "Eliot's doctoral dissertation: 'Knowledge and Experience in the Philosophy of F.H. Bradley' (1916, unpublished until 1964)",
+        "Philosophical underpinning of objective correlative",
+        "Theory of impersonality influenced by Bradley"
+      ],
+      "literary:temporalContext": "1911-1916 (dissertation work)"
+    },
+    {
+      "@id": "literary:TheWasteLand",
+      "@type": "literary:LiteraryWork",
+      "name": "The Waste Land",
+      "author": {"@id": "literary:TSEliot"},
+      "datePublished": "1922-10",
+      "dateCreated": "1921",
+      "workType": "Poetry",
+      "abstract": "434-line modernist poem in five sections depicting spiritual and cultural crisis in post-WWI Europe through fragmented voices, literary allusion, and mythic structure",
+      "numberOfPages": "19 pages (original publication)",
+      "inLanguage": ["en", "de", "fr", "it", "sa"],
+      "literary:structure": [
+        "I. The Burial of the Dead",
+        "II. A Game of Chess",
+        "III. The Fire Sermon",
+        "IV. Death by Water",
+        "V. What the Thunder Said"
+      ],
+      "literary:dedicatedTo": {
+        "@id": "literary:EzraPound",
+        "note": "For Ezra Pound: il miglior fabbro"
+      },
+      "literary:themes": [
+        {"@id": "literary:SpiritualDrought"},
+        {"@id": "literary:CulturalFragmentation"},
+        {"@id": "literary:DeathAndRebirth"},
+        {"@id": "literary:ModernAlienation"},
+        {"@id": "literary:QuestForRedemption"},
+        {"@id": "literary:SexualSterility"}
+      ],
+      "literary:literaryTechniques": [
+        "Fragmented narrative structure",
+        "Multiple voices and perspectives",
+        "Allusion and intertextuality",
+        "Free verse with varied meters",
+        "Mythic method",
+        "Stream of consciousness",
+        "Collage technique",
+        "Multilingual passages"
+      ],
+      "literary:culturalImpact": [
+        "Defining work of literary modernism",
+        "Reshaped understanding of poetic allusion",
+        "Influenced academic poetry pedagogy for decades",
+        "Model for representing fragmented consciousness",
+        "Archetype of cultural pessimism"
+      ]
+    },
+    {
+      "@id": "literary:Prufrock",
+      "@type": "literary:LiteraryWork",
+      "name": "The Love Song of J. Alfred Prufrock",
+      "alternateName": "Prufrock",
+      "author": {"@id": "literary:TSEliot"},
+      "datePublished": "1915-06",
+      "dateCreated": "1910-1911",
+      "workType": "Poetry",
+      "abstract": "Dramatic monologue exploring urban alienation, sexual anxiety, and existential paralysis through the consciousness of an aging man",
+      "literary:publicationHistory": [
+        {
+          "@type": "PublicationEvent",
+          "name": "First Publication",
+          "startDate": "1915-06",
+          "organizer": {
+            "@type": "Periodical",
+            "name": "Poetry: A Magazine of Verse"
+          }
+        }
+      ],
+      "literary:themes": [
+        {"@id": "literary:ModernAlienation"},
+        {"@id": "literary:SelfConsciousnessParalysis"},
+        {"@id": "literary:TimeAndAging"},
+        {"@id": "literary:SexualAnxiety"}
+      ],
+      "literary:literaryTechniques": [
+        "Interior monologue",
+        "Stream of consciousness",
+        "Ironic self-awareness",
+        "Urban imagery",
+        "Free verse innovation"
+      ]
+    },
+    {
+      "@id": "literary:FourQuartets",
+      "@type": "literary:LiteraryWork",
+      "name": "Four Quartets",
+      "author": {"@id": "literary:TSEliot"},
+      "datePublished": "1943",
+      "workType": "Poetry",
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "Burnt Norton",
+          "datePublished": "1936"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "East Coker",
+          "datePublished": "1940"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "The Dry Salvages",
+          "datePublished": "1941"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Little Gidding",
+          "datePublished": "1942"
+        }
+      ],
+      "abstract": "Eliot's final major poetic work: four related poems exploring time, consciousness, memory, and spiritual redemption through Christian mysticism",
+      "literary:themes": [
+        {"@id": "literary:TimeAndEternity"},
+        {"@id": "literary:MysticalUnion"},
+        {"@id": "literary:RedemptionThroughSuffering"},
+        {"@id": "literary:ViaNegativa"},
+        {"@id": "literary:MemoryAndHistory"}
+      ],
+      "literary:intellectualInfluences": [
+        "St. John of the Cross",
+        "Dante Alighieri",
+        "Anglican liturgy",
+        "Heraclitus",
+        "Bhagavad Gita"
+      ],
+      "literary:culturalImpact": [
+        "Masterwork of religious poetry in English",
+        "Meditation on WWII and civilization",
+        "Influenced religious and philosophical poetry",
+        "Model for long-form contemplative poetry"
+      ]
+    },
+    {
+      "@id": "literary:TraditionAndIndividualTalent",
+      "@type": "literary:LiteraryWork",
+      "name": "Tradition and the Individual Talent",
+      "author": {"@id": "literary:TSEliot"},
+      "datePublished": "1919",
+      "workType": "Literary Criticism",
+      "abstract": "Influential essay articulating Eliot's theory of poetic tradition, impersonality, and the relationship between past and present in literature",
+      "literary:keyArguments": [
+        "Historical sense essential for poet",
+        "Past and present form simultaneous order",
+        "Poetry as escape from personality",
+        "Tradition modifiable by new works",
+        "Objective correlative concept introduced"
+      ],
+      "literary:culturalImpact": [
+        "Foundational text for New Criticism",
+        "Reshaped understanding of literary tradition",
+        "Influenced canon formation",
+        "Academic literary theory benchmark"
+      ]
+    },
+    {
+      "@id": "literary:ObjectiveCorrelative",
+      "@type": "literary:IntellectualConcept",
+      "literary:conceptName": "Objective Correlative",
+      "literary:conceptDomain": ["Literary Theory", "Aesthetics"],
+      "description": "A set of objects, a situation, a chain of events which shall be the formula of a particular emotion; such that when the external facts are given, the emotion is immediately evoked",
+      "literary:keyProponents": [
+        {"@id": "literary:TSEliot"}
+      ],
+      "literary:appearanceInWork": [
+        {
+          "@id": "literary:HamletAndHisProblems",
+          "note": "Concept first articulated in essay on Hamlet (1919)"
+        }
+      ],
+      "literary:culturalImpact": [
+        "Central to New Critical methodology",
+        "Influenced poetic practice for decades",
+        "Debate over validity and application ongoing"
+      ]
+    },
+    {
+      "@id": "literary:Modernism",
+      "@type": "literary:LiteraryMovement",
+      "literary:movementName": "Literary Modernism",
+      "literary:temporalExtent": {
+        "@type": "literary:TemporalPeriod",
+        "literary:startDate": "1890",
+        "literary:endDate": "1945"
+      },
+      "literary:geographicOrigin": [
+        {
+          "@type": "City",
+          "name": "London"
+        },
+        {
+          "@type": "City",
+          "name": "Paris"
+        },
+        {
+          "@type": "City",
+          "name": "New York"
+        }
+      ],
+      "literary:keyFigures": [
+        {"@id": "literary:TSEliot"},
+        {"@id": "literary:EzraPound"},
+        {"@id": "literary:JamesJoyce"},
+        {"@id": "literary:VirginiaWoolf"},
+        {"@id": "literary:WilliamCarlosWilliams"}
+      ],
+      "literary:aestheticPrinciples": [
+        "Fragmentation and juxtaposition",
+        "Stream of consciousness",
+        "Mythic method",
+        "Formal experimentation",
+        "Break from Victorian conventions",
+        "Impersonality and objectivity",
+        "International/cosmopolitan outlook",
+        "High literary allusion",
+        "Self-reflexivity"
+      ]
+    },
+    {
+      "@id": "literary:RobertLowell",
+      "@type": "literary:LiteraryFigure",
+      "name": "Robert Lowell",
+      "birthDate": "1917-03-01",
+      "deathDate": "1977-09-12",
+      "nationality": "American",
+      "literary:associatedMovement": [
+        {"@id": "literary:ConfessionalPoetry"}
+      ]
+    },
+    {
+      "@id": "literary:EliotInfluencesLowell",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:TSEliot"},
+      "literary:influenced": {"@id": "literary:RobertLowell"},
+      "literary:influenceType": ["Stylistic", "Thematic", "Direct Personal"],
+      "literary:influenceStrength": "Major",
+      "literary:manifestation": [
+        "High literary allusion practice",
+        "Personal history as cultural commentary",
+        "Formal sophistication",
+        "Urban imagery and alienation",
+        "Historical consciousness"
+      ],
+      "literary:evidenceSources": [
+        "Lowell's essays on Eliot",
+        "Personal meetings and correspondence",
+        "Stylistic analysis of Life Studies",
+        "Lowell's explicit acknowledgments"
+      ],
+      "literary:temporalContext": "1940s-1960s"
+    },
+    {
+      "@id": "literary:SeamusHeaney",
+      "@type": "literary:LiteraryFigure",
+      "name": "Seamus Heaney",
+      "birthDate": "1939-04-13",
+      "deathDate": "2013-08-30",
+      "nationality": "Irish",
+      "award": [
+        {
+          "@type": "Award",
+          "name": "Nobel Prize in Literature",
+          "dateAwarded": "1995"
+        }
+      ]
+    },
+    {
+      "@id": "literary:EliotInfluencesHeaney",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:TSEliot"},
+      "literary:influenced": {"@id": "literary:SeamusHeaney"},
+      "literary:influenceType": ["Stylistic", "Thematic"],
+      "literary:influenceStrength": "Moderate",
+      "literary:manifestation": [
+        "Craft and formal attention",
+        "Literary tradition consciousness",
+        "Cultural and political engagement through poetry",
+        "Allusive practice"
+      ],
+      "literary:evidenceSources": [
+        "Heaney's essays on Eliot",
+        "Interviews discussing Eliot's influence",
+        "Comparative stylistic studies"
+      ]
+    },
+    {
+      "@id": "literary:GeoffreyHill",
+      "@type": "literary:LiteraryFigure",
+      "name": "Geoffrey Hill",
+      "birthDate": "1932-06-18",
+      "deathDate": "2016-06-30",
+      "nationality": "British",
+      "literary:intellectualConcerns": [
+        "Religious questioning",
+        "Historical consciousness",
+        "Linguistic difficulty",
+        "Moral responsibility of poetry"
+      ]
+    },
+    {
+      "@id": "literary:EliotInfluencesHill",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:TSEliot"},
+      "literary:influenced": {"@id": "literary:GeoffreyHill"},
+      "literary:influenceType": ["Thematic", "Stylistic", "Philosophical"],
+      "literary:influenceStrength": "Major",
+      "literary:manifestation": [
+        "Religious and theological preoccupations",
+        "Difficulty and density of language",
+        "Historical and cultural consciousness",
+        "Formal rigor and innovation",
+        "Moral seriousness"
+      ],
+      "literary:evidenceSources": [
+        "Hill's critical writings on Eliot",
+        "Stylistic parallels",
+        "Shared intellectual concerns"
+      ]
+    },
+    {
+      "@id": "literary:AnneCarson",
+      "@type": "literary:LiteraryFigure",
+      "name": "Anne Carson",
+      "birthDate": "1950-06-21",
+      "nationality": "Canadian",
+      "literary:professionalRoles": ["Poet", "Essayist", "Translator", "Classicist"]
+    },
+    {
+      "@id": "literary:EliotInfluencesCarson",
+      "@type": "literary:InfluenceRelationship",
+      "literary:influencer": {"@id": "literary:TSEliot"},
+      "literary:influenced": {"@id": "literary:AnneCarson"},
+      "literary:influenceType": ["Technical/Formal", "Stylistic"],
+      "literary:influenceStrength": "Moderate",
+      "literary:manifestation": [
+        "Fragmentary form",
+        "Classical allusion practice",
+        "Generic hybridization",
+        "Formal experimentation",
+        "Intellectual density"
+      ],
+      "literary:evidenceSources": [
+        "Comparative formal analysis",
+        "Carson's classical scholarship paralleling Eliot's erudition",
+        "Fragmentary structure in works like Autobiography of Red"
+      ]
+    },
+    {
+      "@id": "literary:CleanthBrooks",
+      "@type": "literary:LiteraryFigure",
+      "name": "Cleanth Brooks",
+      "birthDate": "1906-10-16",
+      "deathDate": "1994-05-10",
+      "nationality": "American",
+      "literary:professionalRoles": ["Critic", "Professor"],
+      "literary:associatedMovement": [
+        {"@id": "literary:NewCriticism"}
+      ]
+    },
+    {
+      "@id": "literary:BrooksWasteLandInterpretation",
+      "@type": "literary:CriticalInterpretation",
+      "literary:critic": {"@id": "literary:CleanthBrooks"},
+      "literary:subjectWork": {"@id": "literary:TheWasteLand"},
+      "literary:interpretiveFramework": "New Criticism",
+      "datePublished": "1939",
+      "name": "The Waste Land: An Analysis",
+      "literary:keyArguments": [
+        "Poem unified by fertility ritual myth structure",
+        "Symbolic coherence beneath surface fragmentation",
+        "Close reading reveals organic unity",
+        "Text's internal relationships primary to meaning"
+      ],
+      "literary:culturalImpact": [
+        "Established New Critical dominance in Eliot studies",
+        "Shaped academic teaching methodology",
+        "Model for close reading practice"
+      ]
+    },
+    {
+      "@id": "literary:HarvardUniversity",
+      "@type": "EducationalOrganization",
+      "name": "Harvard University",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cambridge",
+        "addressRegion": "Massachusetts",
+        "addressCountry": "USA"
+      }
+    },
+    {
+      "@id": "literary:EliotHarvardUndergrad",
+      "@type": "literary:InstitutionalAffiliation",
+      "literary:person": {"@id": "literary:TSEliot"},
+      "literary:institution": {"@id": "literary:HarvardUniversity"},
+      "literary:affiliationType": "Student",
+      "startDate": "1906",
+      "endDate": "1909",
+      "literary:degreeEarned": "A.B. (Bachelor of Arts)",
+      "literary:mentor": [
+        {"@id": "literary:IrvingBabbitt"},
+        {"@id": "literary:GeorgeSantayana"}
+      ]
+    },
+    {
+      "@id": "literary:EliotHarvardGraduate",
+      "@type": "literary:InstitutionalAffiliation",
+      "literary:person": {"@id": "literary:TSEliot"},
+      "literary:institution": {"@id": "literary:HarvardUniversity"},
+      "literary:affiliationType": "Student",
+      "startDate": "1911",
+      "endDate": "1914",
+      "literary:degreeEarned": "M.A. in English Literature (1910), Ph.D. work in Philosophy (incomplete)",
+      "literary:mentor": [
+        {"@id": "literary:JosiahRoyce"}
+      ]
+    },
+    {
+      "@id": "literary:OxfordUniversity",
+      "@type": "EducationalOrganization",
+      "name": "University of Oxford",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Oxford",
+        "addressCountry": "England"
+      }
+    },
+    {
+      "@id": "literary:EliotOxford",
+      "@type": "literary:InstitutionalAffiliation",
+      "literary:person": {"@id": "literary:TSEliot"},
+      "literary:institution": {"@id": "literary:OxfordUniversity"},
+      "literary:affiliationType": "Student",
+      "startDate": "1914",
+      "endDate": "1915",
+      "description": "Studied philosophy at Merton College on Sheldon Travelling Fellowship from Harvard"
+    },
+    {
+      "@id": "literary:FaberAndFaber",
+      "@type": "Organization",
+      "name": "Faber and Faber",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "England"
+      },
+      "foundingDate": "1929"
+    },
+    {
+      "@id": "literary:EliotFaber",
+      "@type": "literary:InstitutionalAffiliation",
+      "literary:person": {"@id": "literary:TSEliot"},
+      "literary:institution": {"@id": "literary:FaberAndFaber"},
+      "literary:affiliationType": ["Editor", "Director"],
+      "startDate": "1925",
+      "endDate": "1965",
+      "description": "Joined as editor at Faber & Gwyer (later Faber and Faber), became director, shaped literary publishing for four decades"
+    },
+    {
+      "@id": "literary:TimeAndEternity",
+      "@type": "literary:IntellectualConcept",
+      "literary:conceptName": "Time and Eternity",
+      "literary:conceptDomain": ["Metaphysics", "Theology", "Phenomenology"],
+      "description": "Paradoxical relationship between temporal existence and eternal present; reconciliation of historical time with mystical timelessness",
+      "literary:originatingTradition": [
+        "Christian mysticism (St. Augustine, St. John of the Cross)",
+        "Hindu philosophy (Bhagavad Gita)",
+        "Western philosophy (Heraclitus, Bergson)"
+      ],
+      "literary:appearanceInWork": [
+        {
+          "@id": "literary:FourQuartets",
+          "note": "Central organizing concept across all four poems"
+        }
+      ]
+    },
+    {
+      "@id": "literary:DissociationOfSensibility",
+      "@type": "literary:IntellectualConcept",
+      "literary:conceptName": "Dissociation of Sensibility",
+      "literary:conceptDomain": ["Literary Theory", "Literary History"],
+      "description": "Eliot's theory that English poetry suffered a split between thought and feeling after the metaphysical poets of the 17th century, reunified only in modernism",
+      "literary:keyProponents": [
+        {"@id": "literary:TSEliot"}
+      ],
+      "literary:appearanceInWork": [
+        {
+          "@type": "ScholarlyArticle",
+          "name": "The Metaphysical Poets",
+          "datePublished": "1921"
+        }
+      ],
+      "literary:culturalImpact": [
+        "Reshaped understanding of English literary history",
+        "Elevated status of metaphysical poets",
+        "Influenced periodization practices",
+        "Later critiqued but historically influential"
+      ]
+    },
+    {
+      "@id": "literary:NewCriticism",
+      "@type": "literary:LiteraryMovement",
+      "literary:movementName": "New Criticism",
+      "literary:temporalExtent": {
+        "@type": "literary:TemporalPeriod",
+        "literary:startDate": "1930",
+        "literary:endDate": "1970"
+      },
+      "literary:geographicOrigin": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "literary:keyFigures": [
+        {"@id": "literary:CleanthBrooks"},
+        {"@id": "literary:RobertPennWarren"},
+        {"@id": "literary:AllenTate"},
+        {"@id": "literary:JohnCroweRansom"}
+      ],
+      "literary:aestheticPrinciples": [
+        "Close reading methodology",
+        "Text as autonomous object",
+        "Intentional fallacy rejection",
+        "Affective fallacy rejection",
+        "Formal unity emphasis",
+        "Ambiguity and paradox as positive qualities"
+      ],
+      "description": "Critical movement emphasizing close textual analysis, heavily influenced by Eliot's critical theories"
+    },
+    {
+      "@id": "literary:ConfessionalPoetry",
+      "@type": "literary:LiteraryMovement",
+      "literary:movementName": "Confessional Poetry",
+      "literary:temporalExtent": {
+        "@type": "literary:TemporalPeriod",
+        "literary:startDate": "1950",
+        "literary:endDate": "1970"
+      },
+      "literary:keyFigures": [
+        {"@id": "literary:RobertLowell"},
+        {"@id": "literary:SylviaPlath"},
+        {"@id": "literary:JohnBerryman"},
+        {"@id": "literary:AnneSexton"}
+      ],
+      "literary:aestheticPrinciples": [
+        "Personal experience as subject",
+        "Psychological exploration",
+        "Taboo topics addressed",
+        "First-person intimacy"
+      ],
+      "description": "Movement paradoxically enabled by Eliot's impersonality theory - reaction against yet informed by modernist precedent",
+      "literary:opposedTo": [
+        {
+          "@id": "literary:Modernism",
+          "note": "Rejected impersonality while maintaining formal sophistication"
+        }
+      ]
+    },
+    {
+      "@id": "literary:ModernistLondon",
+      "@type": "literary:GeographicContext",
+      "literary:locationName": "London",
+      "literary:locationType": "City",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.5074",
+        "longitude": "-0.1278"
+      },
+      "literary:associatedFigures": [
+        {"@id": "literary:TSEliot"},
+        {"@id": "literary:EzraPound"},
+        {"@id": "literary:VirginiaWoolf"},
+        {"@id": "literary:WyndhamLewis"}
+      ],
+      "literary:associatedMovements": [
+        {"@id": "literary:Modernism"},
+        {"@id": "literary:Vorticism"}
+      ],
+      "literary:culturalSignificance": "Primary center of English-language modernism; Bloomsbury Group; publishing houses; avant-garde journals",
+      "literary:temporalContext": {
+        "@type": "literary:TemporalPeriod",
+        "literary:startDate": "1914",
+        "literary:endDate": "1945"
+      }
+    },
+    {
+      "@id": "literary:HighModernism",
+      "@type": "literary:TemporalPeriod",
+      "literary:periodName": "High Modernism",
+      "literary:startDate": "1920",
+      "literary:endDate": "1930",
+      "literary:definingCharacteristics": [
+        "Peak of formal experimentation",
+        "Major modernist masterworks published",
+        "International avant-garde networks most active",
+        "Most pronounced break with Victorian conventions"
+      ],
+      "literary:majorEvents": [
+        "Publication of The Waste Land (1922)",
+        "Publication of Ulysses (1922)",
+        "Publication of Mrs Dalloway (1925)",
+        "Publication of The Cantos (ongoing)",
+        "Publication of The Sound and the Fury (1929)"
+      ],
+      "literary:dominantMovements": [
+        {"@id": "literary:Modernism"}
+      ]
+    }
+  ]
+}

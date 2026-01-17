@@ -1,0 +1,889 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "literary": "https://literary-ontology.org/",
+    "influence": "https://influence-ontology.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "time": "http://www.w3.org/2006/time#",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+  },
+  "@graph": [
+    {
+      "@id": "literary:EliotOntology",
+      "@type": "DefinedTermSet",
+      "name": "T.S. Eliot Literary Lineage and Influence Ontology",
+      "description": "Comprehensive ontology capturing T.S. Eliot's intellectual heritage, creative output, influences received and exerted, spanning from his Harvard years (1906) through the first quarter of the 21st century (2025)",
+      "version": "1.0",
+      "dateCreated": "2025-01-16",
+      "hasDefinedTerm": [
+        "literary:LiteraryFigure",
+        "literary:LiteraryWork",
+        "literary:LiteraryMovement",
+        "literary:IntellectualConcept",
+        "literary:InstitutionalAffiliation",
+        "literary:InfluenceRelationship",
+        "literary:CriticalInterpretation",
+        "literary:PublicationEvent",
+        "literary:GeographicContext",
+        "literary:TemporalPeriod"
+      ]
+    },
+    {
+      "@id": "literary:LiteraryFigure",
+      "@type": "Class",
+      "rdfs:subClassOf": "Person",
+      "name": "Literary Figure",
+      "description": "A person engaged in literary creation, criticism, or scholarship",
+      "property": [
+        {
+          "@id": "literary:birthDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Date of birth"
+        },
+        {
+          "@id": "literary:deathDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Date of death"
+        },
+        {
+          "@id": "literary:nationality",
+          "@type": "Property",
+          "rangeIncludes": "Country",
+          "description": "National identity or citizenship"
+        },
+        {
+          "@id": "literary:educationalBackground",
+          "@type": "Property",
+          "rangeIncludes": "EducationalOrganization",
+          "description": "Educational institutions attended"
+        },
+        {
+          "@id": "literary:literaryPeriod",
+          "@type": "Property",
+          "rangeIncludes": "literary:TemporalPeriod",
+          "description": "Literary period(s) in which figure was active"
+        },
+        {
+          "@id": "literary:associatedMovement",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryMovement",
+          "description": "Literary movement(s) with which figure is associated"
+        },
+        {
+          "@id": "literary:majorWorks",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryWork",
+          "description": "Significant literary works created"
+        },
+        {
+          "@id": "literary:influencedBy",
+          "@type": "Property",
+          "rangeIncludes": "literary:InfluenceRelationship",
+          "description": "Influences received from other figures or traditions"
+        },
+        {
+          "@id": "literary:influenced",
+          "@type": "Property",
+          "rangeIncludes": "literary:InfluenceRelationship",
+          "description": "Influence exerted on other figures or movements"
+        },
+        {
+          "@id": "literary:intellectualConcerns",
+          "@type": "Property",
+          "rangeIncludes": "literary:IntellectualConcept",
+          "description": "Key intellectual themes and philosophical concerns"
+        },
+        {
+          "@id": "literary:professionalRoles",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Professional positions held (editor, critic, professor, etc.)"
+        },
+        {
+          "@id": "literary:geographicContext",
+          "@type": "Property",
+          "rangeIncludes": "literary:GeographicContext",
+          "description": "Geographic locations significant to figure's life and work"
+        }
+      ]
+    },
+    {
+      "@id": "literary:LiteraryWork",
+      "@type": "Class",
+      "rdfs:subClassOf": "CreativeWork",
+      "name": "Literary Work",
+      "description": "A creative work of literature (poem, essay, play, novel, criticism)",
+      "property": [
+        {
+          "@id": "literary:workType",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Type of literary work",
+          "sameAs": "genre",
+          "valueOptions": [
+            "Poetry",
+            "Verse Drama",
+            "Literary Criticism",
+            "Essay",
+            "Novel",
+            "Short Story",
+            "Review",
+            "Editorial",
+            "Letter",
+            "Lecture"
+          ]
+        },
+        {
+          "@id": "literary:datePublished",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Date of first publication"
+        },
+        {
+          "@id": "literary:dateComposed",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Date of composition (if different from publication)"
+        },
+        {
+          "@id": "literary:author",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Author of the work"
+        },
+        {
+          "@id": "literary:publisher",
+          "@type": "Property",
+          "rangeIncludes": "Organization",
+          "description": "Publisher of the work"
+        },
+        {
+          "@id": "literary:dedicatedTo",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Person to whom work is dedicated"
+        },
+        {
+          "@id": "literary:themes",
+          "@type": "Property",
+          "rangeIncludes": "literary:IntellectualConcept",
+          "description": "Major themes explored in the work"
+        },
+        {
+          "@id": "literary:literaryTechniques",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Literary techniques employed"
+        },
+        {
+          "@id": "literary:allusionsTo",
+          "@type": "Property",
+          "rangeIncludes": ["literary:LiteraryWork", "literary:IntellectualConcept"],
+          "description": "Works, texts, or concepts alluded to"
+        },
+        {
+          "@id": "literary:criticalReception",
+          "@type": "Property",
+          "rangeIncludes": "literary:CriticalInterpretation",
+          "description": "Critical interpretations and reception history"
+        },
+        {
+          "@id": "literary:culturalImpact",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Broader cultural influence and impact"
+        },
+        {
+          "@id": "literary:intertextualRelations",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryWork",
+          "description": "Other works with intertextual connections"
+        }
+      ]
+    },
+    {
+      "@id": "literary:LiteraryMovement",
+      "@type": "Class",
+      "name": "Literary Movement",
+      "description": "A coherent artistic movement or school in literary history",
+      "property": [
+        {
+          "@id": "literary:movementName",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Name of the movement"
+        },
+        {
+          "@id": "literary:temporalExtent",
+          "@type": "Property",
+          "rangeIncludes": "literary:TemporalPeriod",
+          "description": "Time period of the movement"
+        },
+        {
+          "@id": "literary:geographicOrigin",
+          "@type": "Property",
+          "rangeIncludes": "Place",
+          "description": "Geographic origin or center"
+        },
+        {
+          "@id": "literary:keyFigures",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Central figures associated with movement"
+        },
+        {
+          "@id": "literary:manifestoWorks",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryWork",
+          "description": "Manifesto or defining works"
+        },
+        {
+          "@id": "literary:aestheticPrinciples",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Core aesthetic principles and techniques"
+        },
+        {
+          "@id": "literary:precursorMovements",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryMovement",
+          "description": "Earlier movements that influenced this one"
+        },
+        {
+          "@id": "literary:successorMovements",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryMovement",
+          "description": "Later movements influenced by this one"
+        },
+        {
+          "@id": "literary:opposedTo",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryMovement",
+          "description": "Movements explicitly rejected or opposed"
+        }
+      ]
+    },
+    {
+      "@id": "literary:IntellectualConcept",
+      "@type": "Class",
+      "rdfs:subClassOf": "Thing",
+      "name": "Intellectual Concept",
+      "description": "Philosophical, theological, aesthetic, or critical concept central to literary analysis",
+      "property": [
+        {
+          "@id": "literary:conceptName",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Name of the concept"
+        },
+        {
+          "@id": "literary:conceptDomain",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Intellectual domain",
+          "valueOptions": [
+            "Aesthetics",
+            "Philosophy",
+            "Theology",
+            "Psychology",
+            "Anthropology",
+            "Literary Theory",
+            "Cultural Criticism",
+            "Metaphysics",
+            "Ethics",
+            "Epistemology",
+            "Phenomenology",
+            "Mysticism"
+          ]
+        },
+        {
+          "@id": "literary:originatingTradition",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Intellectual tradition from which concept originates"
+        },
+        {
+          "@id": "literary:keyProponents",
+          "@type": "Property",
+          "rangeIncludes": "Person",
+          "description": "Key thinkers who developed or advanced this concept"
+        },
+        {
+          "@id": "literary:relatedConcepts",
+          "@type": "Property",
+          "rangeIncludes": "literary:IntellectualConcept",
+          "description": "Related or associated concepts"
+        },
+        {
+          "@id": "literary:appearanceInWork",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryWork",
+          "description": "Literary works in which concept appears"
+        }
+      ]
+    },
+    {
+      "@id": "literary:InstitutionalAffiliation",
+      "@type": "Class",
+      "rdfs:subClassOf": "OrganizationRole",
+      "name": "Institutional Affiliation",
+      "description": "Relationship between a literary figure and an educational or professional institution",
+      "property": [
+        {
+          "@id": "literary:institution",
+          "@type": "Property",
+          "rangeIncludes": "Organization",
+          "description": "The institution"
+        },
+        {
+          "@id": "literary:affiliationType",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Type of affiliation",
+          "valueOptions": [
+            "Student",
+            "Faculty",
+            "Fellow",
+            "Lecturer",
+            "Visiting Scholar",
+            "Honorary Degree",
+            "Editor",
+            "Publisher"
+          ]
+        },
+        {
+          "@id": "literary:startDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Start date of affiliation"
+        },
+        {
+          "@id": "literary:endDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "End date of affiliation"
+        },
+        {
+          "@id": "literary:degreeEarned",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Academic degree earned (if applicable)"
+        },
+        {
+          "@id": "literary:mentor",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Mentor or advisor at institution"
+        },
+        {
+          "@id": "literary:colleagues",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Notable colleagues during affiliation"
+        }
+      ]
+    },
+    {
+      "@id": "literary:InfluenceRelationship",
+      "@type": "Class",
+      "name": "Influence Relationship",
+      "description": "Documented influence between literary figures, works, or traditions",
+      "property": [
+        {
+          "@id": "literary:influencer",
+          "@type": "Property",
+          "rangeIncludes": ["literary:LiteraryFigure", "literary:LiteraryWork", "literary:LiteraryMovement", "literary:IntellectualConcept"],
+          "description": "The influencing entity"
+        },
+        {
+          "@id": "literary:influenced",
+          "@type": "Property",
+          "rangeIncludes": ["literary:LiteraryFigure", "literary:LiteraryWork", "literary:LiteraryMovement"],
+          "description": "The influenced entity"
+        },
+        {
+          "@id": "literary:influenceType",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Type of influence",
+          "valueOptions": [
+            "Direct Personal",
+            "Literary/Textual",
+            "Thematic",
+            "Stylistic",
+            "Philosophical",
+            "Technical/Formal",
+            "Oppositional/Reactive",
+            "Mediated/Indirect"
+          ]
+        },
+        {
+          "@id": "literary:influenceStrength",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Strength or significance of influence",
+          "valueOptions": [
+            "Foundational",
+            "Major",
+            "Moderate",
+            "Minor",
+            "Disputed"
+          ]
+        },
+        {
+          "@id": "literary:evidenceSources",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Sources documenting the influence (letters, criticism, textual analysis)"
+        },
+        {
+          "@id": "literary:manifestation",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "How the influence manifests (allusion, technique adoption, thematic echo)"
+        },
+        {
+          "@id": "literary:temporalContext",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "When the influence occurred or became evident"
+        }
+      ]
+    },
+    {
+      "@id": "literary:CriticalInterpretation",
+      "@type": "Class",
+      "rdfs:subClassOf": "Review",
+      "name": "Critical Interpretation",
+      "description": "A critical reading, interpretation, or scholarly analysis of a literary work or figure",
+      "property": [
+        {
+          "@id": "literary:critic",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "The critic or scholar"
+        },
+        {
+          "@id": "literary:subjectWork",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryWork",
+          "description": "Work being interpreted"
+        },
+        {
+          "@id": "literary:subjectFigure",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Figure being analyzed"
+        },
+        {
+          "@id": "literary:interpretiveFramework",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Critical or theoretical framework employed",
+          "valueOptions": [
+            "New Criticism",
+            "Psychoanalytic",
+            "Marxist",
+            "Feminist",
+            "Postcolonial",
+            "Deconstructionist",
+            "Historical",
+            "Biographical",
+            "Formalist",
+            "Reader-Response",
+            "Ecocritical",
+            "Digital Humanities"
+          ]
+        },
+        {
+          "@id": "literary:datePublished",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Publication date of interpretation"
+        },
+        {
+          "@id": "literary:keyArguments",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Central arguments or claims"
+        },
+        {
+          "@id": "literary:influencedInterpretations",
+          "@type": "Property",
+          "rangeIncludes": "literary:CriticalInterpretation",
+          "description": "Later interpretations influenced by this one"
+        }
+      ]
+    },
+    {
+      "@id": "literary:PublicationEvent",
+      "@type": "Class",
+      "rdfs:subClassOf": "PublicationEvent",
+      "name": "Literary Publication Event",
+      "description": "The publication or first appearance of a literary work",
+      "property": [
+        {
+          "@id": "literary:publishedWork",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryWork",
+          "description": "Work being published"
+        },
+        {
+          "@id": "literary:publicationVenue",
+          "@type": "Property",
+          "rangeIncludes": "Periodical",
+          "description": "Journal, magazine, or press"
+        },
+        {
+          "@id": "literary:publicationDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Date of publication"
+        },
+        {
+          "@id": "literary:edition",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Edition information"
+        },
+        {
+          "@id": "literary:publicationContext",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Historical/cultural context of publication"
+        },
+        {
+          "@id": "literary:reception",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Contemporary reception and reviews"
+        }
+      ]
+    },
+    {
+      "@id": "literary:GeographicContext",
+      "@type": "Class",
+      "rdfs:subClassOf": "Place",
+      "name": "Geographic Context",
+      "description": "Geographic location significant to literary history and cultural production",
+      "property": [
+        {
+          "@id": "literary:locationName",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Name of location"
+        },
+        {
+          "@id": "literary:locationType",
+          "@type": "Property",
+          "rangeIncludes": "DefinedTerm",
+          "description": "Type of location",
+          "valueOptions": [
+            "City",
+            "Neighborhood",
+            "University",
+            "Salon/Gathering Place",
+            "Publisher Location",
+            "Residence",
+            "Landscape/Setting"
+          ]
+        },
+        {
+          "@id": "literary:associatedFigures",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryFigure",
+          "description": "Literary figures associated with location"
+        },
+        {
+          "@id": "literary:associatedMovements",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryMovement",
+          "description": "Literary movements centered here"
+        },
+        {
+          "@id": "literary:culturalSignificance",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Cultural or historical significance"
+        },
+        {
+          "@id": "literary:temporalContext",
+          "@type": "Property",
+          "rangeIncludes": "literary:TemporalPeriod",
+          "description": "Time period of significance"
+        }
+      ]
+    },
+    {
+      "@id": "literary:TemporalPeriod",
+      "@type": "Class",
+      "name": "Temporal Period",
+      "description": "A defined period in literary or cultural history",
+      "property": [
+        {
+          "@id": "literary:periodName",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Name of the period"
+        },
+        {
+          "@id": "literary:startDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "Start date"
+        },
+        {
+          "@id": "literary:endDate",
+          "@type": "Property",
+          "rangeIncludes": "Date",
+          "description": "End date"
+        },
+        {
+          "@id": "literary:definingCharacteristics",
+          "@type": "Property",
+          "rangeIncludes": "Text",
+          "description": "Key characteristics of the period"
+        },
+        {
+          "@id": "literary:majorEvents",
+          "@type": "Property",
+          "rangeIncludes": "Event",
+          "description": "Significant historical or cultural events"
+        },
+        {
+          "@id": "literary:dominantMovements",
+          "@type": "Property",
+          "rangeIncludes": "literary:LiteraryMovement",
+          "description": "Literary movements dominant during period"
+        }
+      ]
+    }
+  ],
+  "eliotSpecificTerminology": {
+    "@id": "literary:EliotTerminology",
+    "@type": "DefinedTermSet",
+    "name": "Eliot-Specific Critical Terminology",
+    "hasDefinedTerm": [
+      {
+        "@id": "literary:ObjectiveCorrelative",
+        "@type": "DefinedTerm",
+        "name": "Objective Correlative",
+        "description": "A set of objects, situations, or chain of events that evoke a particular emotion; formulated by Eliot in 'Hamlet and His Problems' (1919)",
+        "termCode": "OC",
+        "inDefinedTermSet": "literary:EliotTerminology"
+      },
+      {
+        "@id": "literary:TraditionAndIndividualTalent",
+        "@type": "DefinedTerm",
+        "name": "Tradition and Individual Talent",
+        "description": "Eliot's concept of how individual poets relate to literary tradition, emphasizing impersonality and historical sense",
+        "termCode": "TIT",
+        "inDefinedTermSet": "literary:EliotTerminology"
+      },
+      {
+        "@id": "literary:DissociationOfSensibility",
+        "@type": "DefinedTerm",
+        "name": "Dissociation of Sensibility",
+        "description": "Eliot's theory that a split between thought and feeling occurred in English poetry after the metaphysical poets",
+        "termCode": "DOS",
+        "inDefinedTermSet": "literary:EliotTerminology"
+      },
+      {
+        "@id": "literary:MythicMethod",
+        "@type": "DefinedTerm",
+        "name": "Mythic Method",
+        "description": "Use of myth and literary/religious allusion to order and give shape to contemporary chaos, as identified by Eliot in Joyce's Ulysses",
+        "termCode": "MM",
+        "inDefinedTermSet": "literary:EliotTerminology"
+      }
+    ]
+  },
+  "samplePopulationGuidelines": {
+    "description": "Guidelines for populating the ontology with Eliot-specific data",
+    "phases": [
+      {
+        "phase": "1_formative_years",
+        "temporalRange": "1888-1914",
+        "geographicFoci": [
+          "St. Louis, Missouri",
+          "Harvard University",
+          "Sorbonne, Paris",
+          "Oxford University",
+          "London"
+        ],
+        "keyInfluences": [
+          "Irving Babbitt (Harvard professor)",
+          "Josiah Royce (Harvard philosopher)",
+          "Santayana (Harvard philosopher)",
+          "Arthur Symons (The Symbolist Movement in Literature)",
+          "Jules Laforgue (French Symbolist)",
+          "Charles Baudelaire",
+          "Dante Alighieri",
+          "John Donne and Metaphysical poets"
+        ],
+        "institutionalAffiliations": [
+          "Harvard University (1906-1910, 1911-1914)",
+          "Sorbonne (1910-1911)",
+          "Oxford University (1914-1915)"
+        ],
+        "majorWorks": [
+          "The Love Song of J. Alfred Prufrock (composed 1910-1911, published 1915)"
+        ]
+      },
+      {
+        "phase": "2_modernist_establishment",
+        "temporalRange": "1914-1927",
+        "geographicFoci": [
+          "London",
+          "Paris (visits)",
+          "Lausanne, Switzerland"
+        ],
+        "keyFigures": [
+          "Ezra Pound (mentor, editor)",
+          "Virginia Woolf (Bloomsbury, publisher)",
+          "James Joyce",
+          "Wyndham Lewis",
+          "Conrad Aiken",
+          "Vivienne Haigh-Wood (first wife)"
+        ],
+        "movements": [
+          "Imagism",
+          "Vorticism",
+          "Modernism (defining figure)"
+        ],
+        "majorWorks": [
+          "Prufrock and Other Observations (1917)",
+          "The Waste Land (1922)",
+          "The Hollow Men (1925)",
+          "Critical essays in The Egoist, The Criterion"
+        ],
+        "intellectualConcepts": [
+          "Fragmentation of consciousness",
+          "Cultural exhaustion",
+          "Quest for meaning in post-WWI landscape",
+          "Impersonality in poetry"
+        ]
+      },
+      {
+        "phase": "3_religious_turn",
+        "temporalRange": "1927-1943",
+        "geographicFoci": [
+          "London",
+          "British countryside retreats"
+        ],
+        "keyEvents": [
+          "Conversion to Anglo-Catholicism (1927)",
+          "British citizenship (1927)",
+          "Separation from Vivienne (1933)"
+        ],
+        "majorWorks": [
+          "Ash-Wednesday (1930)",
+          "Murder in the Cathedral (1935)",
+          "Four Quartets (1943): Burnt Norton (1936), East Coker (1940), The Dry Salvages (1941), Little Gidding (1942)"
+        ],
+        "intellectualConcepts": [
+          "Incarnation and redemption",
+          "Mystical tradition",
+          "Via negativa",
+          "Time and eternity",
+          "St. John of the Cross influence",
+          "Anglican theology",
+          "Dante's spiritual journey"
+        ],
+        "movements": [
+          "Liturgical revival",
+          "Christian humanism"
+        ]
+      },
+      {
+        "phase": "4_elder_statesman",
+        "temporalRange": "1943-1965",
+        "geographicFoci": [
+          "London",
+          "International lecture tours (US, South Africa)"
+        ],
+        "keyRelationships": [
+          "Valerie Fletcher (second wife, 1957)",
+          "Robert Lowell",
+          "Ted Hughes",
+          "Stephen Spender"
+        ],
+        "institutionalRoles": [
+          "Faber & Faber editor and director",
+          "Visiting professor positions"
+        ],
+        "majorWorks": [
+          "The Cocktail Party (1949)",
+          "Notes Towards the Definition of Culture (1948)",
+          "On Poetry and Poets (1957)"
+        ],
+        "awards": [
+          "Nobel Prize in Literature (1948)",
+          "Order of Merit (1948)"
+        ],
+        "influence": [
+          "Shaped New Criticism",
+          "Influenced Confessional poets",
+          "Impacted academic study of poetry",
+          "Cultural criticism model"
+        ]
+      },
+      {
+        "phase": "5_posthumous_influence",
+        "temporalRange": "1965-2000",
+        "keyDevelopments": [
+          "New Critical dominance (1950s-1970s)",
+          "Theoretical challenges (structuralism, post-structuralism, deconstruction)",
+          "Feminist critiques",
+          "Postcolonial readings",
+          "Biographical revelations and reassessments"
+        ],
+        "influencedPoets": [
+          "Robert Lowell",
+          "Ted Hughes",
+          "Geoffrey Hill",
+          "Seamus Heaney",
+          "Derek Walcott",
+          "Les Murray",
+          "A.R. Ammons"
+        ],
+        "criticalSchools": [
+          "New Criticism (Cleanth Brooks, Allen Tate)",
+          "Deconstructive readings (J. Hillis Miller)",
+          "Feminist critique (Sandra Gilbert, Susan Gubar)",
+          "Biographical studies (Lyndall Gordon, Peter Ackroyd)"
+        ]
+      },
+      {
+        "phase": "6_21st_century_reassessment",
+        "temporalRange": "2000-2025",
+        "keyTrends": [
+          "Digital humanities approaches",
+          "Global modernism studies",
+          "Ecocritical readings",
+          "Sound studies and performance",
+          "Archival discoveries",
+          "Public humanities engagement"
+        ],
+        "contemporaryRelevance": [
+          "Environmental crisis and 'The Waste Land'",
+          "Spiritual seeking in secular age",
+          "Fragmentation in digital culture",
+          "Multicultural readings",
+          "Adaptation and remediation"
+        ],
+        "influencedContemporaryPoets": [
+          "Anne Carson",
+          "Geoffrey Hill (continued)",
+          "Alice Oswald",
+          "Don Paterson",
+          "Claudia Rankine (formal experimentation)"
+        ]
+      }
+    ]
+  }
+}
